@@ -10,6 +10,17 @@ class Node {
     }
 };
 
+void insert_at_tail(Node* &head, Node* &tail, int val){
+    Node* newNode = new Node(val);
+    if ( head == NULL){
+        head = newNode;
+        tail = head;
+        return;
+    }
+    tail->next = newNode;
+    tail = newNode;
+}
+
 int main () {
     Node *head = new Node(10);
     head->next = new Node(20);
