@@ -6,18 +6,19 @@ class Student {
     string name;
     int roll;
     int marks;
-    Student (string n, int r, int m){
-        name = n;
-        roll = r;
-        marks = m;
+    Student (string name, int roll, int marks){
+        this->name = name;
+        this->roll = roll;
+        this->marks = marks;
     }
 };
 
 class cmp {
+    public:
     bool operator()(Student l, Student r){
         if (l.marks < r.marks) return true;
         else if (l.marks == r.marks) {
-            if (l.roll < r.roll) return true;
+            if (l.roll > r.roll) return true;
             else return false;
         }
         else return false;
@@ -34,7 +35,7 @@ int main()
         int r;
         int m;
         cin >> n >> r >> m;
-        Student s = Student(n,r,m);
+        Student s(n,r,m);
         pq.push(s);
     }
 
@@ -48,23 +49,23 @@ int main()
             int r;
             int m;
             cin >> n >> r >> m;
-            Student s = Student(n,r,m);
+            Student s(n,r,m);
             pq.push(s);
-            if(!pq.empty()) cout << pq.top().name << "" << pq.top().roll << "" << pq.top().marks << endl;
+            if(!pq.empty()) cout << pq.top().name << " " << pq.top().roll << " " << pq.top().marks << endl;
             else {
                 cout << "Empty" << endl;
             }
         }
-        else if (qry == 1){
-            if(!pq.empty()) cout << pq.top() << endl;
-                else {
-                    cout << "Empty" << endl;
-                }
+        else if (qry == 1){ 
+            if(!pq.empty()) cout << pq.top().name << " " << pq.top().roll << " " << pq.top().marks << endl;
+            else {
+                cout << "Empty" << endl;
+            }
         }
         else if (qry == 2){
             if(!pq.empty()){
                 pq.pop();
-                if(!pq.empty()) cout << pq.top().name << "" << pq.top().roll << "" << pq.top().marks << endl;
+                if(!pq.empty()) cout << pq.top().name << " " << pq.top().roll << " " << pq.top().marks << endl;
                 else {
                     cout << "Empty" << endl;
                 }
