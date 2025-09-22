@@ -65,9 +65,6 @@ int main()
         grid[t.first][t.second] = 'X';
         t = parent[t.first][t.second];
     }
-    {
-        /* code */
-    }
     
     cout << pos_d.first << pos_d.second << endl;
 
