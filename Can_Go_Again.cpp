@@ -39,7 +39,7 @@ int main()
     }
     int m;
     cin >> n >> m;
-    for ( int i = 0; i < n; i ++){
+    for ( int i = 0; i < m; i ++){
         int a,b,c;
         cin >> a >> b >> c;
         edge_list.push_back(edge(a,b,c));
@@ -48,6 +48,8 @@ int main()
     int target;
     cin >> target;
     dis[target] = 0;
+
+    bellman_ford();
     
     int test;
     cin >> test;
