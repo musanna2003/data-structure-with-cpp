@@ -18,12 +18,12 @@ int main() {
                 f = 0;
                 break;
             }
-            if (i<n-1 && (s[i] == '<' && s[i+1] == '>')){
+            if ( i < n-1 && (s[i] == '<' && s[i+1] == '>')){
                 cnt.push_back(count);
                 count = 0;
                 continue;
             }
-            if (i<n-1 && (s[i] == '<' && s[i+1] == '*')){
+            if ( i < n-1 && (s[i] == '<' && s[i+1] == '*')){
                 cnt.push_back(count+1);
                 count = 0;
                 continue;

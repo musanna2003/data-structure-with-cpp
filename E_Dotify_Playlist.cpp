@@ -15,7 +15,7 @@ int main() {
                 v.push_back(a);
             }
         }
-        if (v.empty() || v.size() < m ) {
+        if (v.empty() || v.size() < m) {
             cout << -1 << endl;
             continue;
         }

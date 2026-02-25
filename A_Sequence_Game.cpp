@@ -8,10 +8,6 @@ int main() {
 	while (t--){
 	    int n;
         cin >> n;
-        if (n == 1){
-            cout << "NO \n";
-            continue;
-        }
         vector <long long> v;
         for (int i = 0; i < n ; i ++){
             long long val;
@@ -21,6 +17,11 @@ int main() {
 
         long long k;
         cin >> k;
+        if (n == 1){
+            if (v[0] == k) cout << "YES \n";
+            else cout << "NO \n";
+            continue;
+        }
         int f= 0;
         for (int i = 1; i < n; i ++){
             if (min(v[i-1],v[i]) <= k && max(v[i-1],v[i]) >= k ){

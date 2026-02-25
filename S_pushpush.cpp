@@ -5,10 +5,10 @@ int main() {
     int t;
     cin >> t;
     int n = t;
-    list <int> l;
+    list <long long> l;
     bool f = 1;
     while (t--){
-        int val;
+        long long val;
         cin >> val;
         if (f){
             l.push_back(val);

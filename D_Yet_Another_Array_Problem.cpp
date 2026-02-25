@@ -14,18 +14,14 @@ int main() {
             cin >> val;
             v.push_back(val);
         }
+        sort(v.begin(),v.end());
         int j = 2;
-        int b = v[0];
         while (true){
-            int a = j;
-            while (b != 0) {
-                long long temp = b;
-                b = a % b;
-                a = temp;
+            int f = 0;
+            for (int i = 0; i < n; i ++){
+                if (gcd(v[i], j) == 1) f = 1;
             }
-            if (a == 1){
-                break;
-            }
+            if (f) break;
             j ++;
         }
         cout << j << endl;
