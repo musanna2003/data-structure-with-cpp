@@ -18,11 +18,20 @@ int main() {
         }
         int co =0;
         int ce = 0;
+        int ans = 0;
         for (auto it : mp){
-            if (it.second%2 == 0) ce ++;
-            if (it.second%2 == 1) co++;
-        } 
-        cout << (count_e*2) + count_o  << endl;
+            if (it.second%2 == 1) {
+                co += it.second;
+                ans ++;
+            }
+            else{
+                if ((it.second/2)%2 == 1) ans += 2;
+                else if ((it.second/2)%2 == 0) ce ++;
+            }
+        }
+        if (ce % 2 == 1 && co <= 1) ce --;
+        
+        cout << ans + 2*ce << endl;
     }
 
     return 0;
